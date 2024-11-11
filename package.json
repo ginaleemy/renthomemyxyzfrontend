@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@stripe/stripe-js": "^4.2.0",
+    "jquery": "^3.7.1",
+    "nuxt": "^3.12.4",
+    "popper.js": "^1.16.1",
+    "slugify": "^1.6.6",
+    "swiper": "^11.1.14",
+    "vue": "latest"
+  }
+}
