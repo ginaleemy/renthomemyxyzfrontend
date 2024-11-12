@@ -39,7 +39,7 @@
                 <input type="text" v-model="phone" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Your Phone" required />
               </div>
               <div class="form-group">
-                <textarea class="form-control" v-model="message" aria-label="With textarea" placeholder="Your Message" required></textarea>
+                <textarea class="form-control" v-model="messages" aria-label="With textarea" placeholder="Your Message" required></textarea>
               </div>
               <button @click.prevent="createContactUs" class="btn btn-primary">Submit</button>
             </form>
@@ -61,7 +61,7 @@ const user = getUser()
 const name = ref("")
 const email = ref("")
 const phone = ref(null)
-const message = ref(null)
+const messages = ref(null)
 
 const createContactUs = async () => {
   try {
@@ -74,7 +74,7 @@ const createContactUs = async () => {
         name: name.value,
         email: email.value,
         phone: phone.value,
-        message: message.value
+        messages: messages.value
       }
     })
     console.log(data.value)
