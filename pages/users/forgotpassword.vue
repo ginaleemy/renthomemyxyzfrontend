@@ -30,7 +30,7 @@ const email = ref("")
 
 const forgotpassword = async () => {
   if (email.value) {
-    const { data, error } = await useFetch(runtimeConfig.public.apiBase + "auth/forgot-password", {
+    const { data, error } = await useFetch(runtimeConfig.public.apiBase + "auth/forgotpassword", {
       method: "post",
       body: {
         email: email.value

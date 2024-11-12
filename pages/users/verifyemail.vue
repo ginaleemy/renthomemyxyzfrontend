@@ -20,7 +20,7 @@ const email = ref("")
 const password = ref("")
 
 const verifyemail = async () => {
-  const { data, error } = await useFetch(runtimeConfig.public.apiBase + "auth/verify-email?token=" + route.query.token)
+  const { data, error } = await useFetch(runtimeConfig.public.apiBase + "auth/verifyemail?token=" + route.query.token)
 
   if (data.value) {
     alert("Registration Success! You can now login")
