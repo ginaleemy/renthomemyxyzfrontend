@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <div class="row">
           <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block">
-            <div class="sidebar-sticky pt-3">
+            <div class="sidebar-sticky">
               <ul class="nav flex-column">
                 <li class="nav-item">
                   <a class="nav-link active" href="/users/property/add"> Add New Property </a>
