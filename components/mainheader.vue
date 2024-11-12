@@ -1,7 +1,7 @@
 <template>
   <div id="header">
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-expand-lg navbar-light" style="padding-bottom: 20px">
         <a class="navbar-brand" href="/">
           <img src="/assets/pictures/logo2.png" width="155" />
         </a>

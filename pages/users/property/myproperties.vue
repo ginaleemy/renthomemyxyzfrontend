@@ -3,8 +3,8 @@
     <section class="dashboard">
       <div class="container-fluid">
         <div class="row">
-          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
-            <div class="sidebar-sticky pt-3">
+          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block">
+            <div class="sidebar-sticky">
               <ul class="nav flex-column">
                 <li class="nav-item">
                   <a class="nav-link active" href="/users/property/add"> Add New Property </a>
@@ -21,7 +21,8 @@
               <h3>Rental Property Listings</h3>
 
               <ul class="list-group">
-                <li v-for="(property, index) in properties" :key="property._id" class="list-group-item">
+                <li v-if="!properties || properties.length === 0" class="list-group-item">No records</li>
+                <li v-else v-for="(property, index) in properties" :key="property._id" class="list-group-item">
                   {{ index + 1 }}.{{ property.title }} in {{ property.states }} added on {{ formatDate(property.createdAt) }}
                   <a :href="'/users/property/' + property._id" style="float: right">Edit</a>
                 </li>
