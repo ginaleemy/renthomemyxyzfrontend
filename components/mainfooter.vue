@@ -15,7 +15,7 @@
             </ul>
             <ul>
               <li><a href="/terms">Terms of Use</a></li>
-              <li><a href="/contact">Contact Us</a></li>
+              <li><a href="/contactus">Contact Us</a></li>
             </ul>
           </div>
           <div class="col-md-4 text-left">

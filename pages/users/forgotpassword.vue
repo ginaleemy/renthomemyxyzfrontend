@@ -41,7 +41,8 @@ const forgotpassword = async () => {
       alert("Please check your email to reset password!")
       window.location.pathname = "/"
     } else if (error.value) {
-      alert(error.value.data.message)
+      console.log(error.value.data.message)
+      alert("Internal Error. Please contact Administrator<ginalee1029@gmail.com>")
     }
   } else {
     alert("Please fill in all the fields!")

@@ -30,7 +30,7 @@ const token = route.query.token
 
 const resetpassword = async () => {
   if (password.value && token) {
-    const { data, error } = await useFetch(runtimeConfig.public.apiBase + "auth/reset-password", {
+    const { data, error } = await useFetch(runtimeConfig.public.apiBase + "auth/resetpassword", {
       method: "post",
       body: {
         token: token,
