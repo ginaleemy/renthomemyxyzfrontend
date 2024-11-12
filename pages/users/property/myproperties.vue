@@ -70,7 +70,7 @@ const fetchData = async () => {
       useSetSession(null)
     } else {
       console.error(error.value)
-      alert("Internal error, please login again")
+      alert("Session Timeout! please retry login again!")
       useSetSession(null)
     }
   }
