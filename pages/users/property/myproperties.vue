@@ -74,6 +74,7 @@ const fetchData = async () => {
       alert("Session Timeout! please retry login again!")
       useSetSession(null)
     }
+    window.location.href = "/"
   }
 }
 </script>

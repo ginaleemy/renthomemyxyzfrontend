@@ -1,28 +1,34 @@
 <template>
   <div id="header">
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light" style="padding-bottom: 20px">
-        <a class="navbar-brand" href="/">
-          <img src="/assets/pictures/logo2.png" width="155" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+        <div class="container">
+          <!-- Navbar brand and toggle button are kept on the left -->
+          <a class="navbar-brand" href="/">
+            <img src="/assets/pictures/logo2.png" width="155" />
+          </a>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/properties/pages/1">All Rental</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contactus" @click.prevent="handleContactUs">Contact Us</a>
-            </li>
-          </ul>
-          <div class="d-flex">
-            <ul class="navbar-nav">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Collapsible content aligned to the right -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left-aligned links -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/properties/pages/1">All Rental</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contactus" @click.prevent="handleContactUs">Contact Us</a>
+              </li>
+            </ul>
+
+            <!-- Right-aligned login/logout and rental buttons -->
+            <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <a v-if="!session.data?.user" class="nav-link" href="/users/signin">
                   <svg class="someright" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
