@@ -20,13 +20,13 @@
             <div>
               <h3>Rental Property Listings</h3>
 
-              <ul class="list-group">
+              <ol class="list-group">
                 <li v-if="!properties || properties.length === 0" class="list-group-item">No records</li>
-                <li v-else v-for="(property, index) in properties" :key="property._id" class="list-group-item">
-                  {{ index + 1 }}.{{ property.title }} in {{ property.states }} added on {{ formatDate(property.createdAt) }}
+                <li v-else v-for="(property, index) in properties" :key="property._id" :class="['list-group-item', { 'selected-item': selectedIndex === index }]" @click="selectedIndex = index">
+                  {{ property.title }} in {{ property.states }} added on {{ formatDate(property.createdAt) }}
                   <a :href="'/users/property/' + property._id" style="float: right">Edit</a>
                 </li>
-              </ul>
+              </ol>
             </div>
           </main>
         </div>
@@ -39,6 +39,7 @@
 const user = getUser()
 const runtimeConfig = useRuntimeConfig()
 const properties = ref([])
+const selectedIndex = ref()
 
 definePageMeta({
   middleware: ["auth"]

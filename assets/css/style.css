@@ -570,7 +570,18 @@ i.category {
   border-radius: 4px 4px 0 0;
   opacity: 1;
 }
+.list-group-item {
+  counter-increment: list;
+}
 
+.list-group-item::before {
+  content: counter(list) ". ";
+  font-weight: bold;
+  margin-right: 5px;
+}
+.selected-item {
+  background-color: #ffffe0; /* Light yellow */
+}
 @media only screen and (max-width: 768px) {
   #second h5 {
     margin-bottom: 50px;
