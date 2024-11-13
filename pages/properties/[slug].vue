@@ -12,7 +12,11 @@
         <div class="row">
           <div class="col-md-8">
             <h1>
-              {{ property.title }} <span class="thetag">{{ property.status }}</span>
+              {{ property.title }}
+
+              <span v-if="property.status" :class="['thetag badge ', property.status === 'Occupied' ? 'bg-dark' : 'bg-danger']">
+                {{ property.status }}
+              </span>
             </h1>
             <h5>{{ property.rent }}/Monthly</h5>
             <p>

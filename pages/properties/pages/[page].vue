@@ -14,14 +14,16 @@
         <div class="row searchproperties">
           <div class="col-md-12 text-center">
             <div class="row">
-              <div class="col-md-4 text-left" v-for="property in properties">
+              <div class="col-md-4 text-left p-2" v-for="property in properties">
                 <div class="outer">
                   <a :href="'/properties/' + property.slug">
                     <div class="upper listing-item">
-                      <img v-if="property.photos?.length > 0 && property.photos[0] && property.photos[0] !== ''" :src="property.photos[0]" class="thumbnail-image" />
-                      <img v-else src="/assets/pictures/inner.png" />
+                      <img class="thumbnail-image" v-if="property.photos?.length > 0 && property.photos[0] && property.photos[0] !== ''" :src="property.photos[0]" />
+                      <img class="thumbnail-image" v-else src="/assets/pictures/inner.png" />
                       <div class="innertext">
-                        <span>{{ property.status }}</span>
+                        <span v-if="property.status" :class="['badge', property.status !== 'Occupied' ? 'bg-danger' : 'bg-dark']">
+                          {{ property.status }}
+                        </span>
                         <h4>RM{{ property.rent }} / Monthly</h4>
                       </div>
                     </div>
