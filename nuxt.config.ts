@@ -7,13 +7,14 @@ export default defineNuxtConfig({
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       link: [
+        // Fonts and Font Awesome
         { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Noto+Sans+TC|Open+Sans&display=swap" },
-        { rel: "stylesheet", href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" },
-        { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" }
+        // Bootstrap CSS
+        { rel: "stylesheet", href: "/css/bootstrap.min.css" }
       ]
     }
   },
-  css: ["~/assets/css/style.css", "~/assets/css/icons.css"],
+  css: ["~/assets/css/style.css", "~/assets/css/icons.css", "~/assets/css/fontawesome.css"],
   runtimeConfig: {
     // Keys within public are also exposed client-side
     public: {

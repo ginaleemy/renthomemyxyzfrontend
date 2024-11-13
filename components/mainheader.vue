@@ -8,7 +8,7 @@
             <img src="/assets/pictures/logo2.png" width="155" />
           </a>
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" style="margin-right: 10px" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -50,17 +50,42 @@
   </div>
 </template>
 
+<style scoped>
+/* Custom expand breakpoint for navbar */
+@media (max-width: 1024px) {
+  .navbar-expand-custom .navbar-collapse {
+    display: none !important; /* Collapse the navbar by default */
+  }
+  .navbar-expand-custom .navbar-toggler {
+    display: inline-block;
+  }
+}
+/* Fix any overlapping or z-index issues */
+.navbar {
+  z-index: 1030; /* Ensure navbar is above other elements */
+}
+</style>
 <script setup>
 const session = useSession()
 import { onMounted } from "vue"
+const isClient = ref(false)
 
-onMounted(() => {
-  const script = document.createElement("script")
-  script.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-  script.onload = () => {
-    // Your custom logic here, if needed
-  }
-  document.head.appendChild(script)
+// Dynamically add jQuery and Bootstrap JS only on the client
+useHead({
+  script: [
+    {
+      src: "/js/jquery.min.js",
+      type: "text/javascript",
+      defer: true,
+      body: true
+    },
+    {
+      src: "/js/bootstrap.bundle.min.js",
+      type: "text/javascript",
+      defer: true,
+      body: true
+    }
+  ]
 })
 
 const handleAddRental = () => {
