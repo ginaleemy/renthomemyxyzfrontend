@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 offset-md-2">
-            <div class="alert alert-primary" role="alert">Already have an account?<a href="/users/signin">Click Here</a>Login</div>
+            <div class="alert alert-primary" role="alert">Already have an account?<a href="/users/signin"> Click Here</a> Login</div>
           </div>
 
           <div class="col-md-12 text-center">
@@ -50,11 +50,12 @@ const register = async () => {
       alert("Registration Success! Please check your inbox to verify your account!")
       window.location.href = "/"
     } else if (error.value) {
-      alert(error.value.data.message)
-      /*  if (error.value.data.message.indexOf('minimum allowed length')!= -1){
-                    alert('Your password need longer!')
-                }
-              */
+      console.log(error.value.data.message)
+      if (error.value.data.message.indexOf("minimum allowed length") != -1) {
+        alert("Your password need longer!")
+      } else {
+        alert("You already registered before!")
+      }
     }
   } else {
     alert("Please fill in all the fields!")
