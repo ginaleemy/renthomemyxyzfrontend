@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="(image, index) in uploadedImages" :key="index">
-      <img v-if="image" :src="image" class="thumbnail-image" />
+      <img v-if="image" :src="image" class="thumbnail-image1" />
 
       <div>
         <label :for="`upload${index}`">
